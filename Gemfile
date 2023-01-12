@@ -41,6 +41,7 @@ gem 'bootsnap', require: false
 gem 'devise'
 gem 'devise_invitable'
 gem 'devise-jwt'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'awesome_print'
