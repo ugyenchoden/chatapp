@@ -42,6 +42,9 @@ gem 'devise'
 gem 'devise_invitable'
 gem 'devise-jwt'
 gem 'dotenv-rails'
+gem 'rswag'
+gem 'rswag-api'
+gem 'rswag-ui'
 
 group :development, :test do
   gem 'awesome_print'
