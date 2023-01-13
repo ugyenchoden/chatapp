@@ -1,0 +1,60 @@
+require:
+  - rubocop-performance
+  - rubocop-rspec
+  - rubocop-rails
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3
+  Exclude:
+    - 'bin/**/*'
+    - 'local/**/*'
+    - 'bin/bundle'
+    - 'db/schema.rb'
+Metrics/BlockLength:
+  IgnoredMethods: ['describe']
+  Max: 300
+Documentation:
+  Enabled: false
+
+Rails/SkipsModelValidations:
+  Enabled: false
+
+RSpec/ContextWording:
+  Prefixes:
+    - for
+    - when
+    - with
+    - without
+
+# With swagger, it blocks aren't necessary
+RSpec/EmptyExampleGroup:
+  Enabled: false
+
+# This is for a special case
+#  #=> let(:Authorization) { token(user) }
+# where you need to send variable name as 'Authorization'
+RSpec/VariableName:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Max: 6
+
+RSpec/MultipleExpectations:
+  Max: 5
+
+RSpec/ExampleLength:
+  Max: 30
+
+Layout/LineEndStringConcatenationIndentation:
+  Enabled: false
+
+# diabling for now as instance_double is raising error
+RSpec/VerifiedDoubles:
+  Enabled: false
+
+Naming/MemoizedInstanceVariableName:
+  EnforcedStyleForLeadingUnderscores: optional
+
+# FIX
+Style/OpenStructUse:
+  Enabled: false
