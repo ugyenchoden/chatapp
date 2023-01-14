@@ -6,11 +6,11 @@ Devise.setup do |config|
   config.mailer = 'ApplicationMailer'
   require 'devise/orm/active_record'
 
-  config.authentication_keys = [ :email ]
-  config.case_insensitive_keys = [:email, :username]
-  config.strip_whitespace_keys = [:email, :username]
-  config.reset_password_keys = [ :email ]
-  config.confirmation_keys = [ :email ]
+  config.authentication_keys = [:email]
+  config.case_insensitive_keys = %i[email username]
+  config.strip_whitespace_keys = %i[email username]
+  config.reset_password_keys = [:email]
+  config.confirmation_keys = [:email]
   config.skip_session_storage = [:http_auth]
 
   config.stretches = Rails.env.test? ? 1 : 11
@@ -31,10 +31,9 @@ Devise.setup do |config|
       ['POST', %r{^/sign_in}]
     ]
     jwt.revocation_requests = [
-      ['DELETE', %r{sign_out}]
+      ['DELETE', /sign_out/]
     ]
     jwt.expiration_time = 5.years.to_i
   end
 end
 # rubocop:enable all
-

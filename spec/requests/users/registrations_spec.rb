@@ -2,7 +2,7 @@
 
 require 'swagger_helper'
 
-describe 'Registrations API', type: :request do
+describe 'Registrations API' do
   let_it_be(:role) { create(:role, :user) }
 
   path '/api/v1/users' do
@@ -39,7 +39,7 @@ describe 'Registrations API', type: :request do
           {
             user: {
               email: 'u.c@selise.ch',
-              password: 'Selise88',
+              password: 'Test123',
               role_id: role.id,
               profile_attributes: {
                 firstname: 'Ugyen',
@@ -49,8 +49,7 @@ describe 'Registrations API', type: :request do
           }
         end
         run_test! do
-          binding.pry
-          expect(json).to have_attributes(username: 'uchihachod')
+          expect(json).to have_attributes(email: 'u.c@selise.ch')
         end
       end
 
@@ -60,8 +59,9 @@ describe 'Registrations API', type: :request do
         run_test! do
           expect(json.errors).to match_array(
             [
-              "Password can't be blank",
-              "Profile can't be blank"
+              "Email can't be blank",
+              "Profile can't be blank",
+              "Password can't be blank"
             ]
           )
         end

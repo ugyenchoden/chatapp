@@ -32,4 +32,3 @@ module DeviseSanitizer
     ]
   end
 end
-
