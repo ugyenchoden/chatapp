@@ -5,7 +5,7 @@ on: pull_request
 jobs:
   test:
     name: Run Test
-    runs-on: [self-hosted, do]
+    runs-on: ubuntu-latest
     env:
       RAILS_ENV: test
       RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
