@@ -26,7 +26,7 @@ jobs:
           bundler-cache: true
       - name: Run Test
         env:
-          DATABASE_URL: postgres://postgres:password@localhost:5432/test_chat
+          DATABASE_URL: postgres://postgres:postgres@localhost:5432/test_chat
         run: |
           bundle exec rake db:environment:set RAILS_ENV=test
           RAILS_ENV=test bundle exec rake db:drop db:create db:migrate;
