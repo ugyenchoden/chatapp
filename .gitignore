@@ -32,4 +32,4 @@
 /coverage/*
 /public/
 /vendor/
-/spec/failed_specs.txt
+spec/failed_specs.txt
