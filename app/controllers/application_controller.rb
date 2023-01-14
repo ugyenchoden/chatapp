@@ -14,7 +14,8 @@ class ApplicationController < ActionController::API
   def respond_with(resource, _opts = {})
     if resource.is_a?(Hash) then super
     elsif resource.errors.present? then render json: error_message, status: :unprocessable_entity
-    else render json: resource
+    else
+      render json: resource
     end
   end
 

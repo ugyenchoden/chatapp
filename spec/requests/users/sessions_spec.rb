@@ -41,4 +41,3 @@ describe 'Sessions API' do
     end
   end
 end
-
