@@ -39,7 +39,7 @@ describe 'Registrations API' do
           {
             user: {
               email: 'u.c@selise.ch',
-              password: 'Selise88',
+              password: 'Test123',
               role_id: role.id,
               profile_attributes: {
                 firstname: 'Ugyen',
@@ -49,7 +49,7 @@ describe 'Registrations API' do
           }
         end
         run_test! do
-          expect(json).to have_attributes(username: 'uchihachod')
+          expect(json).to have_attributes(email: 'u.c@selise.ch')
         end
       end
 
@@ -59,8 +59,9 @@ describe 'Registrations API' do
         run_test! do
           expect(json.errors).to match_array(
             [
-              "Password can't be blank",
-              "Profile can't be blank"
+              "Email can't be blank",
+              "Profile can't be blank",
+              "Password can't be blank"
             ]
           )
         end
