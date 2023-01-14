@@ -27,6 +27,9 @@ jobs:
       - name: Run Test
         env:
           DATABASE_URL: postgres://postgres:postgres@localhost:5432/test_chat
+          RAILS_ENV: test
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
         run: |
           bundle exec rake db:environment:set RAILS_ENV=test
           RAILS_ENV=test bundle exec rake db:drop db:create db:migrate;
