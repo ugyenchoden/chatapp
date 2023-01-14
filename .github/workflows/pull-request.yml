@@ -24,21 +24,9 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-
-      - uses: Borales/actions-yarn@v2.3.0
-        with:
-          cmd: install
-
-
       - name: Run Test
         env:
-          PG_DATABASE: postgres
-          PG_HOST: localhost
-          PG_USER: postgres
-          PG_PASSWORD: password
-          RAILS_ENV: test
-          WITH_COVERAGE: true
-          DISABLE_SPRING: 1
+          DATABASE_URL: postgres://postgres:password@localhost:5432/test_chat
         run: |
           bundle exec rake db:environment:set RAILS_ENV=test
           RAILS_ENV=test bundle exec rake db:drop db:create db:migrate;
