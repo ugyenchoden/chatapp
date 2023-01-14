@@ -2,7 +2,7 @@
 
 require 'swagger_helper'
 
-describe 'Registrations API', type: :request do
+describe 'Registrations API' do
   let_it_be(:role) { create(:role, :user) }
 
   path '/api/v1/users' do
@@ -49,7 +49,6 @@ describe 'Registrations API', type: :request do
           }
         end
         run_test! do
-          binding.pry
           expect(json).to have_attributes(username: 'uchihachod')
         end
       end

@@ -6,5 +6,5 @@ class Role < ApplicationRecord
     user: 'User'
   }
 
-  has_many :users
+  has_many :users, dependent: :restrict_with_error
 end
