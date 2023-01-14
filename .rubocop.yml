@@ -11,7 +11,7 @@ AllCops:
     - 'bin/bundle'
     - 'db/schema.rb'
 Metrics/BlockLength:
-  IgnoredMethods: ['describe']
+  AllowedMethods: ['describe']
   Max: 300
 Documentation:
   Enabled: false
