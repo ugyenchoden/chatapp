@@ -28,5 +28,5 @@ jobs:
         env:
           DATABASE_URL: postgres://postgres:postgres@localhost:5432/test_chat
         run: |
-          RAILS_ENV=test bundle exec rake db:create db:migrate;
+          RAILS_ENV=test bundle exec rake db:drop db:create db:migrate;
           bundle exec rspec
