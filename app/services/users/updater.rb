@@ -5,7 +5,7 @@ module Users
     def call
       user.update!(attributes)
     end
-    
+
     def user
       @_user ||= User.find(attributes[:id])
     end
