@@ -47,7 +47,6 @@ class ChatAppSchema < GraphQL::Schema
   end
 
   def self.handle_error(err)
-    Rollbar.error(err)
     yield if block_given?
 
     raise GraphQL::ExecutionError, err

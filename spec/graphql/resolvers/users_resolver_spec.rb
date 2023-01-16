@@ -11,8 +11,8 @@ RSpec.describe Resolvers::UsersResolver do
     { firstname: 'Jeff', lastname: 'Satur' }
   end
 
-  let_it_be(:key_admin) { create(:user, :key_admin, profile_attributes: profile_b) }
-  let_it_be(:user) { create(:user, :user, :inactive, profile_attributes: profile_c) }
+  let_it_be(:key_admin) { create(:user, :key_admin, profile_attributes: profile_a) }
+  let_it_be(:user) { create(:user, :user, profile_attributes: profile_b) }
 
   describe '.resolve' do
     context 'without filters' do

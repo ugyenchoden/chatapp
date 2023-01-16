@@ -14,11 +14,12 @@ module Resolvers
     DESC
 
     def apply_search(scope, value)
-      scope.where(
+      scope.joins(:profile).where(
         "CONCAT_WS(
           ' ',
           email,
-          name
+          profiles.firstname,
+          profiles.lastname
           )
           iLIKE ?",
         "%#{value.squish}%"
