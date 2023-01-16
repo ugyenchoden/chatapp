@@ -3,7 +3,7 @@
 module Attributes
   class Profile < Types::BaseInputObject
     argument :id, ID
-    argument :firstname, String, null: true
-    argument :lastname, String, null: true
+    argument :firstname, String, required: false
+    argument :lastname, String, required: false
   end
 end
