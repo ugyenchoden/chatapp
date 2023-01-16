@@ -45,6 +45,7 @@ gem 'devise_invitable'
 gem 'devise-jwt'
 gem 'dotenv-rails'
 gem 'graphql-batch'
+gem 'graphql-query-resolver'
 gem 'recursive-open-struct'
 gem 'rswag'
 gem 'rswag-api'
@@ -93,4 +94,4 @@ group :development do
   gem 'sprockets', '~> 3'
 end
 
-gem 'graphql', '~> 2.0'
+gem 'graphql', '~> 1.13.12'

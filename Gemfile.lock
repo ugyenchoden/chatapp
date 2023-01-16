@@ -177,10 +177,12 @@ GEM
     graphiql-rails (1.8.0)
       railties
       sprockets-rails
-    graphql (2.0.16)
+    graphql (1.13.18)
     graphql-batch (0.5.1)
       graphql (>= 1.10, < 3)
       promise.rb (~> 0.7.2)
+    graphql-query-resolver (0.2.0)
+      graphql (~> 1.0, >= 1.0.0)
     hashdiff (1.0.1)
     htmlentities (4.3.4)
     i18n (1.12.0)
@@ -476,8 +478,9 @@ DEPENDENCIES
   factory_bot_rails
   faker
   graphiql-rails
-  graphql (~> 2.0)
+  graphql (~> 1.13.12)
   graphql-batch
+  graphql-query-resolver
   letter_opener
   listen (~> 3.3)
   niceql
