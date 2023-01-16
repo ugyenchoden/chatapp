@@ -38,14 +38,21 @@ gem 'bootsnap', require: false
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem "rack-cors"
+gem 'action_policy-graphql'
+gem 'apollo_upload_server', '2.0.5'
 gem 'devise'
 gem 'devise_invitable'
 gem 'devise-jwt'
 gem 'dotenv-rails'
+gem 'graphql-batch'
+gem 'graphql-query-resolver'
 gem 'recursive-open-struct'
 gem 'rswag'
 gem 'rswag-api'
 gem 'rswag-ui'
+gem 'scenic'
+gem 'search_object'
+gem 'search_object_graphql'
 
 group :development, :test do
   gem 'awesome_print'
@@ -86,3 +93,5 @@ group :development do
   gem 'listen', '~> 3.3'
   gem 'sprockets', '~> 3'
 end
+
+gem 'graphql', '~> 1.13.12'

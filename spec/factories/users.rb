@@ -3,6 +3,7 @@
 FactoryBot.define do
   factory :user do
     sequence(:email) { |n| "test+#{n}@selise.ch" }
+    password { 'test123' }
 
     after(:build) do |user|
       !user.profile && user.profile = build(:profile)

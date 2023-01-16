@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  mount GraphiQL::Rails::Engine, at: '/graphiql', graphql_path: '/graphql' if Rails.env.development?
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -14,5 +15,11 @@ Rails.application.routes.draw do
         registrations: 'api/v1/registrations'
       }
     )
+  end
+
+  namespace :api do
+    namespace :v1 do
+      post '/graphql', to: 'graphql#execute'
+    end
   end
 end

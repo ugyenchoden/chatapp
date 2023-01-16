@@ -13,4 +13,7 @@ class User < ApplicationRecord
   validates :profile, presence: true
 
   accepts_nested_attributes_for :profile, allow_destroy: true
+
+  delegate :name, to: :profile, allow_nil: true
+  delegate :name, to: :role, prefix: true
 end
