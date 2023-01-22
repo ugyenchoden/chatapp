@@ -50,6 +50,7 @@ RSpec.describe Resolvers::UserResolver do
           id
           email
           name
+          profile { firstname lastname }
         }
       }
     GQL
